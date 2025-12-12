@@ -1,1 +1,0 @@
-# boneco-do-dia
