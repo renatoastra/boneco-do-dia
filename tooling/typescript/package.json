@@ -2,7 +2,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "2.2.2"
 	},
-	"name": "@duolabs/tsconfig",
+	"name": "@gebra/tsconfig",
 	"private": true,
 	"publishConfig": {
 		"access": "public"

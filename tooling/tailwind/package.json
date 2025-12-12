@@ -4,7 +4,7 @@
 		"tailwindcss": "^4.1.12"
 	},
 	"main": "theme.css",
-	"name": "@duolabs/tailwind-config",
+	"name": "@gebra/tailwind-config",
 	"private": true,
 	"scripts": {
 		"type-check": "tsc --noEmit"
