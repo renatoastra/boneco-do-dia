@@ -6,6 +6,7 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { admin, openAPI } from "better-auth/plugins";
 
 const appUrl = getBaseUrl();
+const sessionCookieMaxAge = 60 * 60 * 24 * 15; // 15 days
 
 export const auth = betterAuth({
 	database: drizzleAdapter(db, {
@@ -18,8 +19,11 @@ export const auth = betterAuth({
 			generateId: false,
 		},
 	},
+	emailAndPassword: {
+		enabled: true,
+	},
 	session: {
-		expiresIn: 1000 * 60 * 60 * 24 * 30, // 30 days
+		expiresIn: sessionCookieMaxAge,
 		freshAge: 0,
 	},
 	user: {

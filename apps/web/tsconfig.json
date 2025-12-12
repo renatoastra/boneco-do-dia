@@ -4,7 +4,11 @@
 		"plugins": [{ "name": "next" }],
 		"paths": {
 			"@gebra/*": ["./modules/*"],
-			"public/*": ["./public/*"]
+			"public/*": ["./public/*"],
+			"@notification/*": ["./modules/notification/*"],
+			"@auth/*": ["./modules/auth/*"],
+			"@ui/*": ["./modules/ui/*"],
+			"@shared/*": ["./modules/shared/*"]
 		}
 	},
 	"include": [

@@ -3,7 +3,7 @@ version: '3.8'
 services:
   postgres:
     image: postgres:16
-    container_name: duo_postgres
+    container_name: gebra_postgres
     ports:
       - "5432:5432"
     environment:
@@ -19,7 +19,7 @@ services:
       retries: 5
   minio:
     image: minio/minio
-    container_name: duo_minio
+    container_name: gebra_minio
     ports:
       - "9000:9000"  # API
       - "9001:9001"  # Console

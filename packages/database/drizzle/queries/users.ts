@@ -1,8 +1,9 @@
+import type { Role } from "@gebra/core";
 import { eq } from "drizzle-orm";
 import type { z } from "zod";
 import { db } from "../client";
 import { account, user } from "../schema/postgres";
-import { UserUpdateSchema } from "../zod";
+import type { UserUpdateSchema } from "../zod";
 
 export async function getUsers({
 	limit,
@@ -45,7 +46,7 @@ export async function createUser({
 }: {
 	email: string;
 	name: string;
-	role: "admin" | "user";
+	role: Role;
 	emailVerified: boolean;
 	onboardingComplete: boolean;
 }) {

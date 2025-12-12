@@ -1,13 +1,17 @@
+import { ROLE } from "@gebra/core";
 import { createId as cuid } from "@paralleldrive/cuid2";
 import { relations } from "drizzle-orm";
 import {
 	boolean,
+	pgEnum,
 	pgTable,
 	text,
 	timestamp,
 	uniqueIndex,
 	varchar,
 } from "drizzle-orm/pg-core";
+
+export const roleEnum = pgEnum("role", [ROLE.ADMIN, ROLE.USER] as const);
 
 export const user = pgTable("user", {
 	id: varchar("id", { length: 255 })
@@ -20,7 +24,7 @@ export const user = pgTable("user", {
 	createdAt: timestamp("createdAt").notNull().defaultNow(),
 	updatedAt: timestamp("updatedAt").notNull().defaultNow(),
 	username: text("username").unique(),
-	role: text("role"),
+	role: roleEnum("role").default(ROLE.USER),
 	banned: boolean("banned"),
 	banReason: text("banReason"),
 	banExpires: timestamp("banExpires"),
@@ -71,8 +75,22 @@ export const account = pgTable("account", {
 	updatedAt: timestamp("updatedAt").notNull(),
 });
 
+export const funFactTable = pgTable("funFact", {
+	id: varchar("id", { length: 255 })
+		.$defaultFn(() => cuid())
+		.primaryKey(),
+	funFact: text("funFact").notNull(),
+	createdAt: timestamp("createdAt").notNull().defaultNow(),
+	updatedAt: timestamp("updatedAt").notNull().defaultNow(),
+	isActive: boolean("isActive").notNull().default(true),
+	userId: text("userId")
+		.notNull()
+		.references(() => user.id, { onDelete: "cascade" }),
+});
+
 // Relations
 export const userRelations = relations(user, ({ many }) => ({
 	sessions: many(session),
 	accounts: many(account),
+	funFacts: many(funFactTable),
 }));

@@ -1,9 +1,9 @@
 {
 	"dependencies": {
 		"@gebra/auth": "workspace:*",
+		"@orpc/client": "^1.8.6",
 		"@gebra/database": "workspace:*",
 		"@gebra/utils": "workspace:*",
-		"@orpc/client": "^1.8.6",
 		"@orpc/json-schema": "^1.8.6",
 		"@gebra/logs": "workspace:*",
 		"@orpc/openapi": "^1.8.6",

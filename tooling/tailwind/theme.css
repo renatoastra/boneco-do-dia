@@ -218,10 +218,16 @@
   --tracking-widest: calc(var(--tracking-normal) + 0.1em);
 }
 
-  body {
-    @apply bg-background text-foreground;
-    letter-spacing: var(--tracking-normal);
-  }
+body {
+  letter-spacing: var(--tracking-normal);
+}
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		@apply border-border;
+	}
 }
 
 @utility container {
