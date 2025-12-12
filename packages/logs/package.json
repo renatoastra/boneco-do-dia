@@ -1,0 +1,16 @@
+{
+	"dependencies": {
+		"consola": "^3.4.2"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.2",
+		"@gebra/tsconfig": "workspace:*",
+		"@types/node": "^24.3.1"
+	},
+	"main": "./index.ts",
+	"name": "@gebra/logs",
+	"scripts": {
+		"type-check": "tsc --noEmit"
+	},
+	"version": "0.0.0"
+}

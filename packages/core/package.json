@@ -1,0 +1,11 @@
+{
+	"name": "@gebra/core",
+	"version": "0.0.0",
+	"private": true,
+	"devDependencies": {
+		"@biomejs/biome": "2.2.2",
+		"@gebra/tsconfig": "workspace:*",
+		"@types/node": "^24.3.1"
+	},
+	"main": "./index.ts"
+}

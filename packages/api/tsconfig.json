@@ -1,0 +1,5 @@
+{
+	"extends": "@gebra/tsconfig/react-library.json",
+	"include": ["**/*.ts"],
+	"exclude": ["dist", "build", "node_modules"]
+}
