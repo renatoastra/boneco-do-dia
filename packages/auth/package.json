@@ -1,0 +1,23 @@
+{
+	"dependencies": {
+		"@gebra/database": "workspace:*",
+		"better-auth": "1.4.6",
+		"cookie": "^1.0.2",
+		"next": "15.3.3",
+		"zod": "^4.1.5",
+		"@gebra/utils": "workspace:*"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@gebra/tsconfig": "workspace:*",
+		"@types/node": "^22.15.30"
+	},
+	"main": "./index.ts",
+	"name": "@gebra/auth",
+	"scripts": {
+		"migrate": "dotenv -e ../../.env.local -- pnpm dlx @better-auth/cli@latest generate --config ./auth.ts --output ../database/prisma/schema.prisma",
+		"type-check": "tsc --noEmit"
+	},
+	"types": "./**/.tsx",
+	"version": "0.0.0"
+}

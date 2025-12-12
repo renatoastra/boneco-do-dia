@@ -22,7 +22,7 @@
 	"packageManager": "pnpm@10.14.0",
 	"devDependencies": {
 		"@biomejs/biome": "2.2.2",
-		"@duolabs/tsconfig": "workspace:*",
+		"@gebra/tsconfig": "workspace:*",
 		"@types/node": "^24.3.1",
 		"dotenv-cli": "^10.0.0",
 		"turbo": "^2.5.6",
