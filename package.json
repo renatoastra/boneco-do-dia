@@ -1,0 +1,37 @@
+{
+	"name": "gebra",
+	"private": true,
+	"scripts": {
+		"build": "dotenv -c -- turbo build",
+		"dev": "dotenv -c -- turbo dev --concurrency 15",
+		"start": "dotenv -c -- turbo start",
+		"docker:up": "docker compose up -d",
+		"clear-modules": "pnpm remove -r",
+		"lint": "biome lint . ",
+		"check": "biome check",
+		"clean": "turbo clean",
+		"format": "biome format . --write",
+		"db:migrate": "cd packages/database && pnpm migrate",
+		"db:drop": "cd packages/database && pnpm drop",
+		"db:studio": "cd packages/database && pnpm studio",
+		"db:generate": "cd packages/database && pnpm generate"
+	},
+	"engines": {
+		"node": ">=20"
+	},
+	"packageManager": "pnpm@10.14.0",
+	"devDependencies": {
+		"@biomejs/biome": "2.2.2",
+		"@duolabs/tsconfig": "workspace:*",
+		"@types/node": "^24.3.1",
+		"dotenv-cli": "^10.0.0",
+		"turbo": "^2.5.6",
+		"typescript": "5.9.2"
+	},
+	"pnpm": {
+		"overrides": {
+			"@types/react": "19.0.0",
+			"@types/react-dom": "19.0.0"
+		}
+	}
+}
